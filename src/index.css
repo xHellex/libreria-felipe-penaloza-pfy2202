@@ -1,0 +1,69 @@
+/* Tailwind CSS v4: se importa el framework y se extiende el tema con la paleta de la librería. */
+@import 'tailwindcss';
+
+@theme {
+  /* Tinta (índigo profundo) como color principal + ámbar como acento */
+  --color-tinta-50: #f3f1fa;
+  --color-tinta-100: #e2dcf3;
+  --color-tinta-500: #5b4bb7;
+  --color-tinta-700: #3f3290;
+  --color-tinta-900: #241c57;
+  --color-ambar-400: #f2b85c;
+  --color-ambar-500: #e8a33d;
+
+  --font-titulo: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --animate-entrar: entrar 0.35s ease-out;
+
+  @keyframes entrar {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply min-h-screen bg-[#faf8f4] font-sans text-[#1f1b2e] antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-titulo;
+  }
+
+  /* Foco visible para navegación con teclado (accesibilidad) */
+  :focus-visible {
+    @apply rounded-md outline-3 outline-offset-2 outline-ambar-500;
+  }
+}
+
+/*
+ * Componentes de estilo reutilizables. Las utilidades escritas en el JSX
+ * tienen prioridad (capa utilities), así cada uso puede ajustar tamaño o forma.
+ */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2 font-semibold no-underline transition-colors disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .btn-primario {
+    @apply bg-tinta-700 text-white shadow-sm hover:bg-tinta-900;
+  }
+
+  .btn-secundario {
+    @apply bg-white text-slate-700 ring-1 ring-slate-300 hover:bg-slate-50;
+  }
+
+  .btn-peligro {
+    @apply bg-red-700 text-white shadow-sm hover:bg-red-800;
+  }
+
+  /* Texto oscuro sobre ámbar: el blanco no alcanza el contraste mínimo de WCAG */
+  .btn-acento {
+    @apply bg-ambar-500 text-slate-900 shadow-sm hover:bg-ambar-400;
+  }
+}
