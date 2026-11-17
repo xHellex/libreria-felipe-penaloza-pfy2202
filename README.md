@@ -5,8 +5,6 @@
 > **Estudiante:** Felipe Peñaloza
 > **Repositorio:** `libreria-felipe-penaloza-pfy2202`
 
-> **Sobre el nombre del repositorio:** las instrucciones de la forma B piden una *tienda de libros*, pero indican el nombre `hospital-nombre-apellido-siglaCurso`. Parece un texto copiado de otra forma de la actividad, así que el repositorio sigue el formato pedido con un nombre que corresponde a lo que se desarrolló: `libreria-felipe-penaloza-pfy2202`.
-
 ---
 
 ## Descripción
